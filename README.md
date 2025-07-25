@@ -4,95 +4,80 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6)
 
-A Model Context Protocol (MCP) server to get YouTube video transcripts.
+A Model Context Protocol (MCP) server for YouTube video transcripts and search.
 
-This server allows you to fetch the transcript of any YouTube video by providing its URL. It's built with FastMCP, making it easy to integrate with any MCP-compatible client, including large language models and other developer tools.
+## Features
 
-## ✨ Features
+- Get YouTube video transcripts with timestamps
+- Search YouTube videos and channels
+- Get channel video lists
+- Chunking support for large transcripts
 
-- **YouTube Transcript Fetching**: Get the full transcript of any YouTube video.
-- **MCP Compliant**: Exposes the functionality through a standard MCP resource.
-- **Easy Integration**: Works with any MCP-compatible client.
-- **Built with FastMCP**: A lightweight and efficient MCP server implementation.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/) (v18 or higher)
-
-### Installation
+## Installation
 
 ```bash
 npm install -g @inlustris/youtube-mcp
 ```
 
-### Running the Server
+## Configuration
 
-Once installed, you can run the server from your terminal:
-
-```bash
-youtube-mcp
-```
-
-The server will start and listen for requests on stdio.
-
-## 📖 Usage
-
-The server exposes a single MCP resource:
-
-- **`youtube:transcript:{videoId}`**: Fetches the transcript for the given YouTube video ID.
-
-### Example with `mcp-cli`
-
-You can use `mcp-cli` to interact with the server:
-
-```bash
-# In one terminal, start the server
-youtube-mcp
-
-# In another terminal, use mcp-cli to get a transcript
-mcp-cli --command "youtube-mcp" get youtube:transcript:dQw4w9WgXcQ
-```
-
-This will return the transcript of the video with the ID `dQw4w9WgXcQ`.
-
-### MCP Client Configuration
-
-To configure an MCP client (like Cursor) to use this server, you can add the following to your client's MCP configuration (e.g., in `.cursor/mcp.json`):
+Add to your MCP client config (e.g., `.cursor/mcp.json`):
 
 ```json
 {
   "mcpServers": {
     "youtube": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@inlustris/youtube-mcp@latest"
-      ]
+      "args": ["-y", "@inlustris/youtube-mcp@latest"]
     }
   }
 }
 ```
 
-## 🛠️ Development
+## Available Tools
 
-For development, you can run the server in watch mode:
+### `get_transcript`
+Get video transcript from YouTube URL.
+
+Parameters:
+- `videoUrl` (required): YouTube video URL
+- `chunkSize` (optional): Max characters per chunk
+- `chunkBySilence` (optional): Split by silence breaks
+- `silenceThreshold` (optional): Silence duration in ms
+
+### `search_videos`
+Search YouTube videos.
+
+Parameters:
+- `query` (required): Search terms
+- `sortBy` (optional): `relevance`, `date`, `rating`, `viewCount`, `title`
+
+### `search_channels`
+Search YouTube channels.
+
+Parameters:
+- `query` (required): Search terms
+- `sortBy` (optional): `relevance`, `date`, `rating`, `viewCount`, `title`, `videoCount`
+
+### `get_channel_videos`
+Get videos from a channel.
+
+Parameters:
+- `channelId` (required): YouTube channel ID
+- `maxResults` (optional): Number of videos (max 200)
+
+## Development
 
 ```bash
-npm run dev
+npm install
+npm run dev        # Development server
+npm run start:http # HTTP server for testing
 ```
 
-You can also run the HTTP server for testing:
+## License
 
-```bash
-npm run start:http
-```
+MIT
 
-## 🤝 Contributing
+## Keywords
 
-Contributions are welcome! Please open an issue or submit a pull request on the [GitHub repository](https://github.com/cactusaurelius/mcp-yt-transcript).
-
-## 📄 License
-
-This project is licensed under the MIT License.
+YouTube transcript, MCP server, Model Context Protocol, YouTube API, video transcript extraction, AI tools, TypeScript, FastMCP, YouTube search, channel analysis, video content analysis, transcript chunking, Claude Desktop, Cursor IDE, AI development tools, YouTube data extraction, video processing, content analysis, automated transcription

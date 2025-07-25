@@ -1,0 +1,7 @@
+{
+    "mcpServers": {
+        "youtube-test-mcp": {
+            "url": "http://localhost:3001/sse"
+        }
+    }
+}

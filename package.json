@@ -2,8 +2,18 @@
   "name": "@inlustris/youtube-mcp",
   "main": "build/index.js",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A Model Context Protocol (MCP) server to get YouTube video transcripts.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cactusaurelius/youtube-mcp.git"
+  },
+  "homepage": "https://github.com/cactusaurelius/youtube-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/cactusaurelius/youtube-mcp/issues"
+  },
+  "author": "inlustris",
+  "license": "MIT",
   "keywords": [
     "mcp",
     "youtube",

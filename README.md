@@ -3,6 +3,7 @@
 ![NPM Version](https://img.shields.io/npm/v/@inlustris/youtube-mcp)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6)
+[![smithery badge](https://smithery.ai/badge/@cactusaurelius/youtube-mcp)](https://smithery.ai/server/@cactusaurelius/youtube-mcp)
 
 A Model Context Protocol (MCP) server for YouTube video transcripts and search.
 
@@ -15,6 +16,15 @@ A Model Context Protocol (MCP) server for YouTube video transcripts and search.
 
 ## Installation
 
+### Installing via Smithery
+
+To install [@inlustris/youtube-mcp](https://npmjs.com/package/@inlustris/youtube-mcp) for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cactusaurelius/youtube-mcp):
+
+```bash
+npx -y @smithery/cli install @cactusaurelius/youtube-mcp --client claude
+```
+
+### Manual Installation
 ```bash
 npm install -g @inlustris/youtube-mcp
 ```

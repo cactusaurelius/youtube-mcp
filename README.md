@@ -1,10 +1,14 @@
 # @inlustris/youtube-mcp
 
+**No-fuss YouTube transcripts for MCP - no API keys required!**
+
 ![NPM Version](https://img.shields.io/npm/v/@inlustris/youtube-mcp)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6)
 
 A Model Context Protocol (MCP) server for YouTube video transcripts and search.
+
+*No fuss setup - no Google API keys required!* Just install and start extracting transcripts.
 
 ## Features
 
